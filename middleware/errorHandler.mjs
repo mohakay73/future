@@ -2,8 +2,8 @@ import fs from 'fs';
 import path from 'path';
 
 const errorHandler = (err, req, res) => {
-  const filePath = path.join(global.__appdir, 'logs', 'error.log');
-  console.log("Writing error log to:", filePath); // Debug log
+  const filePath = path.join(__appdir, 'logs', 'error.log');
+  console.log('Writing error log to:', filePath); // Debug log
   err.statusCode = err.statusCode || 500;
   err.status = err.status || 'Internal Server Error';
 
