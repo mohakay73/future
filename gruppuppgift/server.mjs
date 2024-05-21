@@ -7,9 +7,9 @@ import errorHandler from "./middleware/errorHandler.mjs";
 import path from "path";
 
 import ErrorResponse from "./utilities/errorResponseModel.mjs";
-import blockchainRouter from "./routes/blockchain-routes.mjs";
+// import blockchainRouter from "./routes/blockchain-routes.mjs";
 import transactionRouter from "./routes/transaction-routes.mjs";
-import memberRouter from "./routes/member-routes.mjs";
+// import memberRouter from "./routes/member-routes.mjs";
 import { ensureDirectoryExists } from "./utilities/filehandler.mjs";
 
 dotenv.config({ path: './config/config.env' });
@@ -24,16 +24,15 @@ ensureDirectoryExists(path.join(global.__appdir, 'logs'));
 // Middleware...
 app.use(cors());
 app.use(express.json());
-app.use("/api/v1/blockchain", blockchainRouter);
+// app.use("/api/v1/blockchain", blockchainRouter);
 app.use("/api/v1/transactions", transactionRouter);
-app.use("/api/v1/members", memberRouter);
+// app.use("/api/v1/members", memberRouter);
 
 if (process.env.NODE_ENV === "development") {
   app.use(logger);
 }
 
-// app.use('/api/v1/products', productsRouter);
-// app.use('/api/v1/customers', customersRouter);
+
 
 // Catch all url...
 app.all("*", (req, res, next) => {
