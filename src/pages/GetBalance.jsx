@@ -12,7 +12,6 @@ const GetBalance = () => {
   return (
     <div>
       <h2>Get Balance</h2>
-      <p>Placeholder for Get Balance functionality.</p>
       <input
         type="text"
         value={address}

@@ -8,7 +8,6 @@ const CreateAccount = () => {
   const { response, error, loading, fetchData } = useAxios();
 
   const handleCreateAccount = async () => {
-    console.log("Create Account Button Clicked");
     await fetchData('http://localhost:5001/api/v1/crypto/create-account', 'POST', {}, { address });
   };
 
@@ -22,7 +21,6 @@ const CreateAccount = () => {
   return (
     <div>
       <h2>Create Account</h2>
-      <p>Placeholder for Create Account functionality.</p>
       <input
         type="text"
         value={address}
