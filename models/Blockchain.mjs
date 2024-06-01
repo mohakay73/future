@@ -2,7 +2,7 @@ import { createHash } from '../utilities/crypto-lib.mjs';
 import Block from './Block.mjs';
 import Transaction from './Transaction.mjs';
 import FileHandler from '../utilities/filehandler.mjs';
-
+import CryptoCurrency from './cryptoCurrency.mjs';
 export default class Blockchain {
   constructor() {
     this.fileHandler = new FileHandler('data', 'blockchain.json');
@@ -14,7 +14,7 @@ export default class Blockchain {
       this.memberNodes = [];
       this.pendingTransactions = [];
       this.nodeUrl = process.argv[3];
-
+      this.cryptoCurrency = new CryptoCurrency('data', '../data/accounts.json');
       this.createBlock(Date.now(), '0', '0', [], 2048, process.env.DIFFICULTY);
     }
   }

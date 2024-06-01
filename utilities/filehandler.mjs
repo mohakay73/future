@@ -29,6 +29,7 @@ class FileHandler {
     }
   }
 
+  
   write(data) {
     try {
       const jsonData = { chain: data };
